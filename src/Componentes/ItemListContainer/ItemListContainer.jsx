@@ -1,14 +1,15 @@
 import "../ItemListContainer/style.css";
 
-const ItemListContainer = () => {
+function ItemListContainer({mensaje}) {
   return (
     <>
-      <h1 className="title">PRODUCTOS</h1>
-      <div className="productos">
-        <p>Aca iran los productos renderizados...</p>
+      <div className="title">
+        <h1>Productos</h1>
+        <p>{mensaje}</p>
       </div>
+
     </>
   );
-};
+}
 
 export default ItemListContainer;

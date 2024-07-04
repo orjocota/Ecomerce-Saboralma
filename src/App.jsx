@@ -6,7 +6,7 @@ function App() {
   return (    
     <div className="App">
       <NavBar/>
-      <ItemListContainer/>
+      <ItemListContainer mensaje="¡Esta Pagina de encuentra en construcion, por favor tener paciencia..." />
     </div>
   );
 }
