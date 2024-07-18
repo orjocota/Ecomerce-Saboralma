@@ -1,13 +1,71 @@
 import "../ItemListContainer/style.css";
+import img from "../../images/Producto 1.jpg";
+import ItemCounter from "../ItemCounter/ItemCounter";
 
-function ItemListContainer({mensaje}) {
+function ItemListContainer({ mensaje }) {
   return (
     <>
-      <div className="title">
-        <h1>Productos</h1>
-        <p>{mensaje}</p>
+      <h1 className="title">PRODUCTOS</h1>
+      <div className="productos">
+        <div className="producto">
+          <a href="#">
+            <div className="producto__img">
+              <img src={img} alt="" />
+            </div>
+          </a>
+          <div className="producto__footer">
+            <h1>Title</h1>
+            <p>categoria</p>
+            <p className="price">$3.200</p>
+          </div>
+          <ItemCounter stock={10}/>
+          <div className="buttom">
+            <button className="btn">Añadir al Carrito</button>
+            <a href="#" className="btn">
+              Vista
+            </a>
+          </div>
+        </div>
+        <div className="producto">
+          <a href="#">
+            <div className="producto__img">
+              <img src={img} alt="" />
+            </div>
+          </a>
+          <div className="producto__footer">
+            <h1>Title</h1>
+            <p>categoria</p>
+            <p className="price">$3.200</p>
+          </div>
+          <ItemCounter stock={10}/>
+          <div className="buttom">
+            <button className="btn">Añadir al Carrito</button>
+            <a href="#" className="btn">
+              Vista
+            </a>
+          </div>
+        </div>
+        <div className="producto">
+          <a href="#">
+            <div className="producto__img">
+              <img src={img} alt="" />
+            </div>
+          </a>
+          <div className="producto__footer">
+            <h1>Title</h1>
+            <p>categoria</p>
+            <p className="price">$3.200</p>
+          </div>
+          <ItemCounter stock={10}/>
+          <div className="buttom">
+            <button className="btn">Añadir al Carrito</button>
+            <a href="#" className="btn">
+              Vista
+            </a>
+          </div>
+        </div>
       </div>
-
+      
     </>
   );
 }
