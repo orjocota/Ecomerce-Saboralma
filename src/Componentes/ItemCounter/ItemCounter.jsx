@@ -18,6 +18,8 @@ const ItemCounter = ({stock}) => {
       alert("No puedes decrementar más");
     }
   };
+
+  
   return (
     <>
       <div>

@@ -1,12 +1,19 @@
-import ItemListContainer from "./Componentes/ItemListContainer/ItemListContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { NavBar } from "./Componentes/NavBar/NavBar";
-import "boxicons"
+import "boxicons";
+import ItemListContainer from "./Componentes/ItemListContainer/ItemListContainer";
+
 
 function App() {
-  return (    
+  return (
     <div className="App">
-      <NavBar/>
-      <ItemListContainer mensaje="¡Esta Pagina de encuentra en construcion, por favor tener paciencia..." />
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path={"/ItemListContainer"} element={<ItemListContainer/>} />
+        </Routes>
+      </BrowserRouter>
+     
     </div>
   );
 }
