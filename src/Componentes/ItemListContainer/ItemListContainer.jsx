@@ -1,34 +1,42 @@
-import "../ItemListContainer/style.css";
-import img from "../../images/Producto 1.jpg";
+import { Data } from "../../Data/Data";
 import ItemCounter from "../ItemCounter/ItemCounter";
+import "../ItemListContainer/style.css";
 
-function ItemListContainer() {
+const ItemListContainer = ({Tproductos,setTproductos}) => {
+
+    const onAddProductos = () =>{
+    console.log("add")
+  }
+
+  
   return (
-    <>
-      <h1 className="title">PRODUCTOS</h1>
-      <div className="productos">
-        <div className="producto">
-          <a href="#">
-            <div className="producto__img">
-              <img src={img} alt="" />
+
+      <div className="container">
+        <h1 className="title"> PRODUCTOS </h1>
+        <div className="row">
+          {Data.map((item) => (
+            <div key={item.id} className="col-md-4 mb-3">
+              <div className="card h-100">
+                <img
+                  src={item.imagen}
+                  className="card-img-top object-fit-cover"
+                  alt={item.nombre}
+                />
+                <div className="card-body text-center">
+                  <h5 className="card-title text-uppercase fs-4 fw-bold">{item.nombre}</h5>
+                  <p className="card-text fs-4">${item.precio}</p>
+                  <ItemCounter />
+                  <a href="#" className="btn btn-success my-3 fs-4 fw-bold" onClick={() => onAddProductos()}>
+                    Añadir a Carrito
+                  </a>
+                </div>
+              </div>
             </div>
-          </a>
-          <div className="producto__footer">
-            <h1>Title</h1>
-            <p>categoria</p>
-            <p className="price">$3.200</p>
-          </div>
-          <ItemCounter/>
-          <div className="buttom">
-            <button className="btn">Añadir al Carrito</button>
-            <a href="#" className="btn">
-            Ver información
-            </a>
-          </div>
+          ))}
         </div>
       </div>
-    </>
+
   );
-}
+};
 
 export default ItemListContainer;
