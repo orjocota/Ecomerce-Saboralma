@@ -1,5 +1,5 @@
-import { useState } from "react";
-import LOGO from "../../Data/images/LOGO.png";
+
+import LOGO from "../../../Imagenes/LOGO.png";
 import CartWidget from "../CartWidget/CartWidget";
 import {Link} from "react-router-dom"
 

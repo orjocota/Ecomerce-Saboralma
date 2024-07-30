@@ -1,38 +1,60 @@
 import { useState } from "react";
 
 const ItemCounter = ({stock}) => {
-  const [contador, setContador] = useState(1);
+
+  const [Contador, setContador] = useState(1);
   const [itemStock, setItemStock] = useState(stock);
 
   const incrementar = () => {
-    if (contador < itemStock) {
-      setContador(contador + 1);
-    } else {
-      alert("No hay stock suficiente");
+    if(Contador < itemStock){
+      setContador(Contador + 1);
     }
-  };
-  const decrementar = () => {
-    if (contador > 1) {
-      setContador(contador - 1);
-    } else {
-      alert("No puedes decrementar más");
-    }
-  };
 
-  
+  }
+  const decrementar = () => {
+    if(Contador > 1){
+      setContador(Contador - 1);
+    }
+
+  }
+  const onAdd = () => {
+    if (Contador <= itemStock) {
+      setItemStock(itemStock - Contador);
+      setContador(1);
+      console.log("Agregaste " + Contador + "Prodcutos al Carro");      
+    }else{
+      alert("No se tiene mas Stock Disponible")
+    }
+  }
+
   return (
     <>
-      <div>
-        <button type="buttom" className="btn_count" onClick={decrementar}>
+       <div className="container">
+        <div className="row">
+          <div className="col">
+            <div className="btn-group" role="group">
+        <button type="button" className="btn btn-light rounded-start-pill" onClick={decrementar}>
           -
         </button>
-        <button type="buttom" className="btn_count">
-          {contador}
+        <button type="button" className="btn btn-light">
+          {Contador}
         </button>
-        <button type="buttom" className="btn_count" onClick={incrementar}>
+        <button type="button" className="btn btn-light rounded-end-circle" onClick={incrementar}>
           +
         </button>
       </div>
+          </div>
+        </div>
+        <div className="row my-3">
+        <button type="button" className="btn btn-success" onClick={onAdd}>
+          Añadir al Carrito
+        </button>
+        </div>
+       </div>
+
+
+
+      
     </>
   );
 };
