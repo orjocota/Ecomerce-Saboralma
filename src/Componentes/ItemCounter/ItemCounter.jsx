@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ItemCounter = ({stock}) => {
 
@@ -26,6 +26,9 @@ const ItemCounter = ({stock}) => {
       alert("No se tiene mas Stock Disponible")
     }
   }
+  useEffect(() =>{
+    setItemStock(stock)
+  },[stock])
 
   return (
     <>
@@ -45,8 +48,8 @@ const ItemCounter = ({stock}) => {
       </div>
           </div>
         </div>
-        <div className="row my-3">
-        <button type="button" className="btn btn-success" onClick={onAdd}>
+        <div className="row my-3 d-flex justify-content-center">
+        <button type="button" className="btn btn-success w-75" onClick={onAdd}>
           Añadir al Carrito
         </button>
         </div>

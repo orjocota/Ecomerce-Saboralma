@@ -1,32 +1,24 @@
 import { useState, useEffect } from "react";
 import Productos from "../../Json/Json.json";
 import ItemDetail from "../ItemDetail/ItemDetail";
-
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-    const [Objeto ,setObjeto] = useState({});
+    const [objeto, setObjeto] = useState({});
+    const {id} = useParams();
     
     useEffect(() => {
       const promesa = new Promise(resolve => {
         setTimeout(() => {
-          resolve(Productos.find(Objeto => Objeto.id === 3))
-          
-        }, 2000);
+          resolve(Productos.find(element => element.id == id))          
+        }, 2000)
       })
       promesa.then(result => {
-        setObjeto(result)
+        setObjeto(result)        
       })  
-    }, []) 
-    
-    return (
-  
-        <div className="container">
-          <h1 className="title"> PRODUCTOS </h1>
-          <div className="row">  
-              <ItemDetail obj={Objeto}/>
-          </div>        
-        </div>
+    }, [id])     
+    return (  
+      <ItemDetail props={objeto}/>
     );
 }
-
-export default ItemDetailContainer;
+export default ItemDetailContainer

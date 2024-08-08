@@ -1,6 +1,6 @@
 import Item from "../Item/Item.jsx";
 
-const ItemList = ({ items }) => {
+const ItemList = ({ items }) => {  
   return (
     <>
       {items.map((producto) => (

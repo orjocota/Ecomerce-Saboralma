@@ -1,7 +1,7 @@
 
 import LOGO from "../../../Imagenes/LOGO.png";
 import CartWidget from "../CartWidget/CartWidget";
-import {Link} from "react-router-dom"
+import {Link, NavLink} from "react-router-dom"
 
 export const NavBar = () => {
   return (
@@ -14,10 +14,16 @@ export const NavBar = () => {
       </Link>
       <ul>
         <li>
-          <Link to="/Inicio">INICIO</Link>
+          <NavLink to="/Inicio">INICIO</NavLink>
         </li>
         <li>
-          <Link to="/ItemListContainer">PRODUCTOS</Link>
+          <NavLink to="/ItemListContainer">PRODUCTOS</NavLink>
+        </li>
+        <li>
+          <NavLink to="/category/comidas">COMIDAS</NavLink>
+        </li>
+        <li>
+          <NavLink to="/category/bebidas">BEBIDAS</NavLink>
         </li>
       </ul>
       <CartWidget />
